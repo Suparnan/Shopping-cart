@@ -18,7 +18,7 @@ function Header() {
     const [cartItems, setCartItems] = useState([]);
     let obj = {}
     localData.map((ele) => {
-       obj[ele.id] = false
+     return obj[ele.id] = false
     })
 
     const [disable, setDisable] = useState(obj);
@@ -32,7 +32,7 @@ function Header() {
     })
 
     const onRemove = ((id) => {
-        const exist = cartItems.find((x) => x.id === id);
+        // const exist = cartItems.find((x) => x.id === id);
         let newDisable = {...disable}
         setCartItems(cartItems.filter((x) => x.id !== id))
         newDisable[id] = false;
